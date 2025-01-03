@@ -1,0 +1,9 @@
+opencv-python-headless
+moviepy==2.1.1
+joblib==1.4.2
+pandas
+ffmpeg
+imageio
+Pillow==10.4.0
+streamlit
+scikit-learn==1.4.2
