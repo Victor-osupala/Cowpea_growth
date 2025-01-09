@@ -265,6 +265,3 @@ with tabs[1]:
                 st.warning("Please enter a valid email address.")
     else:
         st.warning("No plants have been added to the tracker yet.")
-
-    st.subheader(f"Note: This project is open to growth and Development.")
-
