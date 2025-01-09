@@ -221,10 +221,10 @@ with tabs[1]:
 
         # Email Feedback Section
         st.subheader("Email Feedback")
-        email_address = st.text_input("Enter your email address:")
+        user_feedback = st.text_area("How do you feel about this app?", placeholder="Write your feedback here...")
         
         if st.button("Send Feedback"):
-            if email_address:
+            if user_feedback.strip():
                 try:
                     
 
@@ -233,23 +233,18 @@ with tabs[1]:
                     sender_email = "greatestseyi@gmail.com"
                     # sender_password = "rwny omnp gwfv paju"
                     sender_password = "zums bezn wdex sloj"
-                    subject = f"Plant Growth Details: {plant_details['name']}"
+                    subject = "User Feedback for the Cowpea Crop Monitoring App"
                     body = f"""
-                    Plant Details for {plant_details['name']}:
-                    - Date Planted: {plant_details['date_planted']}
-                    - Days Remaining: {plant_details['days_to_maturity']}
-                    - Growth Stage: {growth_stage}
-                    - Predicted SEED per pod: {int(plant_details['SEED'])}
-                    - Predicted Yield (KGHA): {round(plant_details['SEEDKGHA'], 3)}
-                    - Predicted DFF (50% Maturity): {plant_details['DFF']}
-                    - Predicted MATURE (95% Maturity): {plant_details['MATURE']}
-                    - Notes: {plant_details['notes']}
+                    User Feedback:
+                    {user_feedback}
+
+                    Note: This app is still in development. Features and functionality are subject to change, enhancement, or refinement.
                     """
                     
                     # Setup email
                     message = MIMEMultipart()
                     message['From'] = sender_email
-                    message['To'] = email_address
+                    message['To'] = sender_address
                     message['Subject'] = subject
                     message.attach(MIMEText(body, 'plain'))
 
