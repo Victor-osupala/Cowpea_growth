@@ -220,7 +220,11 @@ with tabs[1]:
         st.write(f"- **Notes:** {plant_details['notes']}")
 
         # Email Feedback Section
-        st.subheader("Email Feedback")
+        st.subheader("User Feedback")
+        # Adding a note about app development
+        st.write(
+            "Note: This app is still in development. Features and functionality are subject to change, enhancement, or refinement."
+        )
         user_feedback = st.text_area("How do you feel about this app?", placeholder="Write your feedback here...")
         
         if st.button("Send Feedback"):
@@ -244,7 +248,7 @@ with tabs[1]:
                     # Setup email
                     message = MIMEMultipart()
                     message['From'] = sender_email
-                    message['To'] = sender_address
+                    message['To'] = sender_email
                     message['Subject'] = subject
                     message.attach(MIMEText(body, 'plain'))
 
